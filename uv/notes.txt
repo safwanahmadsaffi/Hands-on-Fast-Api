@@ -1,1 +1,9 @@
- 
+# ----uv----
+# Notes on UV Module
+ pip install uv
+
+ uv init # it will initilize
+
+ uv venv
+  .venv\Scripts\activate
+  
