@@ -28,7 +28,7 @@ students = [
 def root():
     return {"Message" : "hello world"}
 
-
+#filtering students whose names start with specific letters
 @app.get("/filter-students")
 def filter_students(sw: str,):
     filtered_names = []
@@ -38,7 +38,7 @@ def filter_students(sw: str,):
             filtered_names.append(student)
     return filtered_names
 
-
+#list of all students
 @app.get("/students")
 def get_students(): # type: ignore
     return students
@@ -50,5 +50,5 @@ def get_students():  # noqa: F811
 
 #this is dynamic endpoint
 @app.get("/students/{id}")
-def get_student(id: int = Path(ge=0, lt=len(students))):
+def get_student(id: int = Path(ge=0, lt=len(students))): #path manage krta hai validation ko id k lye
     return students[id]
