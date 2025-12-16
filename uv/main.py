@@ -23,7 +23,7 @@ students = [
     "Zoya", "Amna", "Rabia", "Nida", "Aiman"
 ]
 
-
+#by default endpoint is same as function name
 @app.get("/")
 def root():
     return {"Message" : "hello world"}
@@ -43,10 +43,12 @@ def filter_students(sw: str,):
 def get_students(): # type: ignore
     return students
 
-@app.get("/students/ali")
-def get_students():
-    return "ali"
+#this is static endpoint
+@app.get("/students/Safwan Ahmad Saffi")
+def get_students():  # noqa: F811
+    return "Safwan Ahmad Saffi"
 
+#this is dynamic endpoint
 @app.get("/students/{id}")
 def get_student(id: int = Path(ge=0, lt=len(students))):
     return students[id]
