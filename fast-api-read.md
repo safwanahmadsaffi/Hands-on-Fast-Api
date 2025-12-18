@@ -17,6 +17,7 @@
 
 ---
 
+
 # CLIENT-SERVER ARCHITECTURE
 
 ## The Client (REQUEST-INITIATOR)
